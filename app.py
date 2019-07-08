@@ -3,7 +3,6 @@ import cv2
 
 cap = cv2.VideoCapture('a.mp4')
 
-
 # params for ShiTomasi corner detection
 feature_params = dict(maxCorners=100,
                       qualityLevel=0.3,
@@ -47,7 +46,7 @@ im = old_frame
 height, width, depth = im.shape
 
 circle_img = np.zeros((height, width), np.uint8)
-cv2.circle(circle_img, (mouseX, mouseY), 50, 1, thickness=-1)
+cv2.circle(circle_img, (mouseX, mouseY), 10, 1, thickness=-1)
 
 masked_data = cv2.bitwise_and(im, im, mask=circle_img)
 
